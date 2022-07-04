@@ -24,7 +24,7 @@ export default function SingUp(){
 
             let dates={email, password, passwordConfirm, name}
 
-            const request = axios.post('http://localhost:5000/signUp', dates, config).then((res)=>{
+            const request = axios.post('https://my-wallet-geovanni.herokuapp.com/signUp', dates, config).then((res)=>{
                 if(res.status===201){
                     console.log(res.data)
                     navigate("/")

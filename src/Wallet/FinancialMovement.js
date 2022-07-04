@@ -26,12 +26,14 @@ export default function FinancialMovement(){
                 }
             }
 
+           
 
             let dates ={
                 valor, description, type
             }
+
     
-            const request = axios.post('http://localhost:5000/financialMovement', dates, config).then(()=> navigate('/Estrato')).catch((res)=>alert(res.response.data))
+            const request = axios.post('https://my-wallet-geovanni.herokuapp.com/financialMovement', dates, config).then(()=> navigate('/Estrato')).catch((res)=>alert(res.response.data))
     
         }
     

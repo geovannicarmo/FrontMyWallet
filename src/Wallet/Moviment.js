@@ -1,15 +1,20 @@
-import { type } from "@testing-library/user-event/dist/type"
+
 import styled from "styled-components"
 
 export default function Movement({date, index}){
 
-const { type, valor, description} = date
+    console.log(date)
+    
+    let { type, valor, description, day} = date
+   
+     valor = parseFloat(Math.abs(valor).toFixed(2))
 
     return(
-        <MovimentStyled>
+        <MovimentStyled habilitado={type}>
+            <h1> {day}</h1>
             <h1> {type}</h1>
             <h1> {description}</h1>
-            <h1> {valor}</h1>
+            <h2> {valor} </h2>
         </MovimentStyled>
     )
 
@@ -19,5 +24,13 @@ const { type, valor, description} = date
 const MovimentStyled = styled.div`
 display: flex;
 justify-content: space-between;
-margin: 10px;
+margin: 12px;
+
+h2{
+    color: ${props => props.habilitado!=="entrada" ? "red" : "#8FC549"};
+}
+   
+
 `
+
+
