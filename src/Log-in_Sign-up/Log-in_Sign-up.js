@@ -87,7 +87,17 @@ const StyledForm = styled.form`
 display: flex;
 flex-direction: column;
 
+
+
 input{
-    margin: 5px;
+    margin-top: 10px;
+    height: 30px;
+
+}
+
+button{
+    margin-top: 10px;
+    height: 30px;
+    background-color: #FFFFFF;
 }
 `

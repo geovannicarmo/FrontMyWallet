@@ -62,6 +62,18 @@ flex-direction: column;
 margin-top: 60px;
 width: 80%;
 
+
+input{
+    margin-top: 10px;
+    height: 30px;
+
+}
+
+button{
+    margin-top: 10px;
+    height: 30px;
+    background-color: #FFFFFF;
+}
 `
 
 const StyledContainer = styled.div`

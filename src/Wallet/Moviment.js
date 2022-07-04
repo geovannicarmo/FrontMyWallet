@@ -12,7 +12,6 @@ export default function Movement({date, index}){
     return(
         <MovimentStyled habilitado={type}>
             <h1> {day}</h1>
-            <h1> {type}</h1>
             <h1> {description}</h1>
             <h2> {valor} </h2>
         </MovimentStyled>

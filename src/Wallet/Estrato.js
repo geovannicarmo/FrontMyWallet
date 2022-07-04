@@ -38,9 +38,17 @@ export default  function Estrato(){
         
     }, []);
 
+    useEffect(() => {
+
+        axios.get('https://my-wallet-geovanni.herokuapp.com/name', config).then((request)=>{
+       
+        setName(request.data)
+    }).catch((res)=>alert("nnnnn"))
+        
+    }, []);
 
 
-    console.log(items);
+
     let sun=0
     for(let i=0; i<items.length; i++){
         if(items[i].type==="entrada"){
@@ -51,7 +59,7 @@ export default  function Estrato(){
         }
     }
 
-    console.log(sun);
+ 
 
 
     function logOut(){
@@ -76,11 +84,11 @@ export default  function Estrato(){
         <StyledEstrato>
             <StyledTop>
 
-               <h1>Olá</h1>
+               <h1>Olá {name}</h1>
                
                <BiLogOut onClick={logOut}/>
             </StyledTop>
-            <StyledBalance>
+            <StyledBalance habilitado={sun}>
                 
                
 
@@ -99,7 +107,7 @@ export default  function Estrato(){
                  
                 }
 
-                <h3>Saldo: {sun}</h3>
+                <h3 id="sun">Saldo: {sun}</h3>
             </StyledBalance>
 
             <StyledBootons>
@@ -153,7 +161,12 @@ height: 70%;
     position: relative;
     display: flex;
     justify-content: space-between;
-    margin-top: 30px;
+    margin-top: 60px;
+    margin-left: 20px;
+
+    
+    color: ${props => props.habilitado<=0 ? "red" : "#8FC549"};
+
 }
 `
 
